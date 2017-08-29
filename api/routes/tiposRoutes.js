@@ -11,4 +11,8 @@ module.exports = function(app) {
         .get(tipos.read_a_tipo)
         .put(tipos.update_a_tipo)
         .delete(tipos.delete_a_tipo);
+
+    app.get('/hola_mundo', function (req, res) {
+        res.send('Hello World!');
+    });
 };
