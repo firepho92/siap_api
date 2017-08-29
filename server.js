@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 8080,
+    port = process.env.PORT || 3030,
     mongoose = require('mongoose'),
     Pregunta = require('./api/models/preguntasModel'),
     Tipo = require('./api/models/tiposModel'),
@@ -12,7 +12,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/Test');
+    mongoose.connect('mongodb://root:admin@ds161713.mlab.com:61713/siap');
 
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
