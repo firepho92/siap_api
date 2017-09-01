@@ -13,4 +13,7 @@ module.exports = function(app) {
         .get(preguntas.read_a_pregunta)
         .put(preguntas.update_a_pregunta)
         .delete(preguntas.delete_a_pregunta);
+
+    app.route('/preguntas/proyecto')
+        .post(preguntas.delete_preguntas_by_proyecto);
 };

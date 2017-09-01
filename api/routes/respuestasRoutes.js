@@ -16,5 +16,4 @@ module.exports = function(app) {
 
     app.route('/pushRespuestas')
         .post(respuestas.push_respuestas);
-
 };

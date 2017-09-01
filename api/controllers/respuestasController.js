@@ -49,7 +49,7 @@ exports.delete_a_respuesta = function(req, res) {
 exports.read_respuestas_by_encuestado = function(req, res){
   Respuesta.find({ encuestado: req.params.encuestadoId })
     .populate('encuestado')
-    .populate('proyecto')
+    .populate('proyectos.proyecto')
     .exec((err, respuesta)=>{
       if(err)
         res.send(err)
@@ -59,7 +59,6 @@ exports.read_respuestas_by_encuestado = function(req, res){
 
 exports.push_respuestas = function(req, res){
   var resp;
-  console.log(req.body.proyectos[0]);
   Respuesta.update({encuestado: req.body.encuestado}, {$push: {proyectos: req.body.proyectos[0]}}, (err, respuesta) => {
     if(err)
       res.send(err);

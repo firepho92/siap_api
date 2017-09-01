@@ -46,3 +46,11 @@ exports.delete_a_pregunta = function(req, res) {
         res.json({ message: 'Pregunta borrada con éxito' });
     });
 };
+
+exports.delete_preguntas_by_proyecto = function(req, res) {
+  Pregunta.remove({ proyecto: req.body.proyecto }, function(err, pregunta) {
+    if(err)
+      res.send(err);
+    res.json({message: 'Pregunta borrada con éxito'})
+  })
+}
