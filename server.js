@@ -12,7 +12,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
     mongoose.Promise = global.Promise;
-      mongoose.connect('mongodb://root:admin@ds161713.mlab.com:61713/siap');
+      mongoose.connect('https://frozen-bayou-72696.herokuapp.com');
 
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
